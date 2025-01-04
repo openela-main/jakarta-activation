@@ -1,6 +1,6 @@
 Name:           jakarta-activation
 Version:        1.2.2
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Jakarta Activation Specification and Implementation
 License:        BSD
 URL:            https://eclipse-ee4j.github.io/jaf/
@@ -61,6 +61,9 @@ sed -i "s/\${activation.osgiversion}/%{version}/g" activation/pom.xml
 %license LICENSE.md NOTICE.md
 
 %changelog
+* Tue Nov 19 2024 Marián Konček <mkoncek@redhat.com> - 1.2.2-6
+- Rebuild with regenerated Requires on Java
+
 * Mon Aug 09 2021 Mohan Boddu <mboddu@redhat.com> - 1.2.2-5
 - Rebuilt for IMA sigs, glibc 2.34, aarch64 flags
   Related: rhbz#1991688
