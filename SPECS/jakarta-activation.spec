@@ -1,10 +1,11 @@
 Name:           jakarta-activation
 Version:        1.2.2
-Release:        6%{?dist}
+Release:        8%{?dist}
 Summary:        Jakarta Activation Specification and Implementation
 License:        BSD
 URL:            https://eclipse-ee4j.github.io/jaf/
 BuildArch:      noarch
+ExclusiveArch:  aarch64 ppc64le s390x x86_64 noarch
 
 Source0:        https://github.com/eclipse-ee4j/jaf/archive/%{version}/jaf-%{version}.tar.gz
 
@@ -61,6 +62,12 @@ sed -i "s/\${activation.osgiversion}/%{version}/g" activation/pom.xml
 %license LICENSE.md NOTICE.md
 
 %changelog
+* Sat Nov 23 2024 Marián Konček <mkoncek@redhat.com> - 1.2.2-8
+- Add noarch to ExclusiveArch
+
+* Fri Nov 22 2024 Marián Konček <mkoncek@redhat.com> - 1.2.2-7
+- Disable building on i686
+
 * Tue Nov 19 2024 Marián Konček <mkoncek@redhat.com> - 1.2.2-6
 - Rebuild with regenerated Requires on Java
 
